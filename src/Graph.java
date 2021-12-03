@@ -7,8 +7,8 @@ public class Graph {
     public static boolean useDistCost = true;
     public static boolean returnAddress = false;
 
-    private HashMap<String, Vertex> vertices;
-    private ArrayList<Edge> edges;
+    public HashMap<String, Vertex> vertices;
+    public ArrayList<Edge> edges;
 
     public Graph(String fileName) {
         vertices = new HashMap<String, Vertex>();
