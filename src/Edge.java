@@ -1,23 +1,35 @@
 public class Edge {
-    public Vertex fromVertex;
-    public Vertex toVertex;
-    public int timeCost;
-    public int distCost;
+    public Vertex startPt;
+    public int timeCost, distCost;
 
-    public Edge(Vertex fromVertex, Vertex toVertex, int timeCost, int distCost) {
-        super();
-        this.fromVertex = fromVertex;
-        this.toVertex = toVertex;
+    public Edge(Vertex startPt, int timeCost, int distCost) {
+        this.startPt = startPt;
         this.timeCost = timeCost;
         this.distCost = distCost;
     }
 
+
     @Override
     public String toString() {
-        return String.format("%s -> %s (%d %s)",
-                fromVertex,
-                toVertex,
-                Graph.useDistCost ? distCost : timeCost,
-                Graph.useDistCost ? "miles" : "minutes");
+        String ret = " ";
+
+        ret += getStartPt() ;
+        ret += ", " + getTimeCost();
+        ret += "," + getDistCost();
+        return ret;
     }
+
+    public Vertex getStartPt() {
+        return startPt;
+    }
+
+    public int getTimeCost() {
+        return timeCost;
+    }
+
+    public int getDistCost() {
+        return distCost;
+    }
+
+
 }
